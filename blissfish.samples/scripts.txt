@@ -1,0 +1,28 @@
+mvn package && java -jar target/sample.service-0.0.1-SNAPSHOT.jar
+curl -i http://localhost:8080
+curl -i http://localhost:8080/health
+curl -i http://localhost:8080/loggers
+curl -i http://localhost:8080/auditevents
+curl -i http://localhost:8080/beans
+curl -i http://localhost:8080/autoconfig
+curl -i http://localhost:8080/env
+curl -i http://localhost:8080/metrics
+curl -i http://localhost:8080/configprops
+curl -i http://localhost:8080/mappings
+curl -i http://localhost:8080/dump
+curl -i http://localhost:8080/info
+curl -i http://localhost:8080/trace
+
+
+
+sudo docker ps -a
+
+
+sudo docker image build ./basic-restful-service -t basic-restful-service
+sudo docker run --name basic-restful-service -p 8080:8080 basic-restful-service
+
+sudo docker image build . -t basic-restful-service
+
+sudo docker run --name sample-service -p 8080:8080 sample.service.docker
+
+

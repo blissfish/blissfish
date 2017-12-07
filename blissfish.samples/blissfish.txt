@@ -1,0 +1,132 @@
+adduser = perl script
+useradd
+sudo adduser mark
+sudo adduser mark sudo
+====================================
+https://docs.docker.com/engine/installation/linux/docker-ce/ubuntu/
+sudo apt-get remove docker docker-engine docker.io
+
+sudo apt-get update
+
+sudo apt-get install \
+    linux-image-extra-$(uname -r) \
+    linux-image-extra-virtual
+    
+sudo apt-get install \
+    apt-transport-https \
+    ca-certificates \
+    curl \
+    software-properties-common
+    
+curl -fsSL https://download.docker.com/linux/ubuntu/gpg | sudo apt-key add -
+    
+sudo apt-key fingerprint 0EBFCD88
+sudo add-apt-repository \
+   "deb [arch=amd64] https://download.docker.com/linux/ubuntu \
+   $(lsb_release -cs) \
+   stable"
+sudo apt-get update
+apt-cache madison docker-ce
+sudo apt-get install docker-ce=17.09.0~ce-0~ubuntu
+sudo docker run hello-world
+sudo usermod -a -G docker $USER
+
+docker run -d --name config-server -p 8888:8888 anilallewar/basic-config-server:0.0.1
+docker logs -f config-server
+
+====================================
+http://sourcedigit.com/22256-how-to-install-oracle-java-on-ubuntu-17-04/
+sudo apt-get update
+sudo add-apt-repository ppa:webupd8team/java
+sudo apt-get update
+sudo apt-get install java-common oracle-java8-installer
+
+#####Important########
+To set Oracle JDK8 as default, install the "oracle-java8-set-default" package.
+E.g.: 
+sudo apt install oracle-java8-set-default
+On Ubuntu systems, oracle-java8-set-default is most probably installed
+automatically with this package.
+######################
+
+====================================
+https://github.com/anilallewar/microservices-basics-spring-boot
+
+docker run -d --name config-server -p 8888:8888 anilallewar/basic-config-server
+
+====================================
+
+bastelstube.local 192.168.192.4
+dockerizor.local 192.168.192.13 
+MongoDB connection on dockerizor
+192.168.192.18:32768
+ssh mark@bastelstube.local
+====================================
+sandbox.local 192.168.192.11
+====================================
+Git ubuntu help
+https://help.ubuntu.com/lts/serverguide/git.html
+Git a nice simple guide as basic reference
+
+My Github repo https://github.com/blissfish/blissfish01.git
+mark.evertz@gmx.de 
+or
+blissfish
+pwd bliss13fish
+
+Github repo access
+git clone https://github.com/blissfish/blissfish01.git
+
+echo "# blissfish01" >> README.md
+git init
+git add README.md
+git commit -m "first commit"
+git remote add origin https://github.com/blissfish/blissfish01.git
+git push -u origin master
+
+git add *
+git commit -m "message"
+git pus origin master
+
+
+Contabo stuff
+
+PING blissfish01.contaboserver.net (91.194.91.220) 56(84) bytes of data.
+64 bytes from m0824.contabo.host (91.194.91.220):
+
+VNC
+193.200.241.106
+Run75bla
+
+https://contabo.com
+Run7_bla
+
+VNC
+SSH (mark)
+178.238.239.99
+Run75bla
+
+blissfish.net
+
+sudo cp -rf public/* /var/www/html/ 
+
+===================================
+Mongo DB
+===================================
+sudo apt-key adv --keyserver hkp://keyserver.ubuntu.com:80 --recv 2930ADAE8CAF5059EE73BB4B58712A2291FA4AD5
+===================================
+Spring Boot actuators
+===================================
+
+curl -i http://localhost:8080/health
+curl -i http://localhost:8080/loggers
+curl -i http://localhost:8080/auditevents
+curl -i http://localhost:8080/beans
+curl -i http://localhost:8080/autoconfig
+curl -i http://localhost:8080/env
+curl -i http://localhost:8080/metrics
+curl -i http://localhost:8080/configprops
+curl -i http://localhost:8080/mappings
+curl -i http://localhost:8080/dump
+curl -i http://localhost:8080/info
+curl -i http://localhost:8080/trace
