@@ -80,5 +80,7 @@
 		<module>basic.angular.ui</module>
 		<module>basic.config.server</module>
 		<module>basic.config.client</module>
+		<module>basic.service.discovery</module>
+		<module>basic.service.discovery.client</module>
 	</modules>
 </project>
