@@ -25,14 +25,14 @@ public class UserControllerTests {
 	@Test
 	public void noParamUserShouldReturnDefaultMessage() throws Exception {
 		this.mockMvc.perform(get("/user")).andDo(print()).andExpect(status().isOk())
-				.andExpect(jsonPath("$.email").value("Hans"));
+				.andExpect(jsonPath("$.email").value("hans@email.com"));
 	}
 
 	@Test
 	public void paramUserShouldReturnTailoredMessage() throws Exception {
-		this.mockMvc.perform(get("/user").param("email", "Peter"))
+		this.mockMvc.perform(get("/user").param("id", "2"))
 				.andDo(print()).andExpect(status().isOk())
-				.andExpect(jsonPath("$.email").value("Peter"));
+				.andExpect(jsonPath("$.email").value("peter@email.com"));
 	}
 
 }

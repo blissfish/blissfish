@@ -14,6 +14,8 @@ curl -i http://localhost:8080/info
 curl -i http://localhost:8080/trace
 
 
+mvn clean package
+mvnw spring-boot:run
 
 sudo docker ps -a
 
