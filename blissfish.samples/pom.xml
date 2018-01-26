@@ -79,6 +79,6 @@
 		<module>basic.mongodb.service</module>
 		<module>basic.angular.ui</module>
 		<module>basic.config.server</module>
-		<module>basic.config.service</module>
+		<module>basic.config.client</module>
 	</modules>
 </project>
