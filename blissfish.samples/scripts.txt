@@ -43,4 +43,18 @@ Client
 http://localhost:8080/message
 
 
+=== User Service ===
+curl -i http://127.0.0.1:8080/api/users/10002
+
+$ curl -i http://127.0.0.1:8080/api/users/10002
+HTTP/1.1 200
+X-Application-Context: application
+Content-Type: application/json;charset=UTF-8
+Transfer-Encoding: chunked
+Date: Sat, 27 Jan 2018 11:25:42 GMT
+
+{"id":10002,"name":"Peter"}
+
+
+
 

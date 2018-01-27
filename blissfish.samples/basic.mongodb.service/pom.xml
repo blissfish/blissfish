@@ -14,11 +14,11 @@
 		</dependency>
 
  		<!-- Uncomment to enable embedded mongodb. Requires to uncomment spring.data.mongodb.uri in application.properties as well -->
-		<!-- dependency>
+		<dependency>
 			<groupId>de.flapdoodle.embed</groupId>
 			<artifactId>de.flapdoodle.embed.mongo</artifactId>
 			<scope>test</scope>
-		</dependency-->
+		</dependency>
 		</dependencies>
 </project>
 
