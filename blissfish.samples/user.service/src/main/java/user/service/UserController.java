@@ -3,6 +3,8 @@ package user.service;
 import javax.validation.Valid;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Value;
+import org.springframework.cloud.context.config.annotation.RefreshScope;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.CrossOrigin;
@@ -15,11 +17,15 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
+@RefreshScope
 @RestController
 @RequestMapping("/api")
 @CrossOrigin("*")
 public class UserController {
 
+    @Value("${message:Hello default}")
+    private String message;
+    
 	@Autowired
 	UserRepository userRepository;
 
@@ -58,4 +64,10 @@ public class UserController {
 	public void deleteUser(@PathVariable("uid") String uid) {
 		userRepository.delete(uid);
 	}
+	
+    @RequestMapping("/message")
+    String getMessage() {
+        return this.message;
+    }
+
 }

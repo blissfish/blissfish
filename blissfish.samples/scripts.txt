@@ -54,7 +54,27 @@ Transfer-Encoding: chunked
 Date: Sat, 27 Jan 2018 11:25:42 GMT
 
 {"id":10002,"name":"Peter"}
+=== Get all users ===
+curl -i http://127.0.0.1:8081/api/users
+=== Get one specific user ===
+curl -i http://127.0.0.1:8081/api/users/U0001
+=== Update one specific user ===
+curl -i -d '{"name":"Karl"}' -H "Content-Type: application/json" -X PUT http://127.0.0.1:8081/api/users/U0001
 
+
+=== PCF ===
+http://docs.run.pivotal.io/starting/index.html 
+cf login 
+using cygwin:
+cf auth mark.evertz@gmx.de PASSWORD
+ cf target -o blissfish -s development
+cf push (checks content & existance of manifest.yml file)
+Check status of app
+cf app cf-spring
+Change memory
+cf scale cf-spring -m 1G
+Change disk space
+cf scale cf-spring -k 512m
 
 
 
