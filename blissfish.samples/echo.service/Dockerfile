@@ -4,7 +4,7 @@ FROM openjdk:8-jdk-alpine
 MAINTAINER blissfish <mark.evertz@gmx.de>
 
 # Keep consistent with build.gradle 
-ENV APP_JAR_NAME echo-service
+ENV APP_JAR_NAME echo.service
 ENV APP_JAR_VERSION 0.0.1-SNAPSHOT
 
 # Install curl
