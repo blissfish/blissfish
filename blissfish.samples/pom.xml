@@ -90,5 +90,7 @@
 		<module>basic.service.discovery.client</module>
 		<module>user.service</module>
 		<module>preferences.service</module>
+		<module>simple.service</module>
+		<module>echo.service</module>
 	</modules>
 </project>
