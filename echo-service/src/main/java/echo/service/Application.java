@@ -1,5 +1,9 @@
 package echo.service;
 
+import java.net.InetAddress;
+import java.net.UnknownHostException;
+
+import org.springframework.beans.factory.annotation.Value;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.web.bind.annotation.PathVariable;
@@ -10,6 +14,9 @@ import org.springframework.web.bind.annotation.RestController;
 @RestController
 @SpringBootApplication
 public class Application {
+	
+	@Value("${version}")
+	private String version;
 
     public static void main(String[] args) {
         SpringApplication.run(Application.class, args);
@@ -17,6 +24,20 @@ public class Application {
 
     @RequestMapping("/hello/{name}")
     String hello(@PathVariable String name) {
-        return "Hello, " + name + "!\n";
+    	String host = getHostName();
+    	String response = ((host!=null)?"Host: "+host+"\n":""); 
+    	response += "Version: " + version + "\n";
+    	response += "Hello, " + name + "!\n";
+    	return response;
     }
+
+	private String getHostName() {
+		String host = "";
+    	 try {
+			host = InetAddress.getLocalHost().getHostName();
+		} catch (UnknownHostException e) {
+			e.printStackTrace();
+		}
+		return host;
+	}
 }
