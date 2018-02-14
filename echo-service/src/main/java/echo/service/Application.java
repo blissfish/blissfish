@@ -25,9 +25,10 @@ public class Application {
     @RequestMapping("/hello/{name}")
     String hello(@PathVariable String name) {
     	String host = getHostName();
-    	String response = ((host!=null)?"Host: "+host+"\n":""); 
+    	String response = "Hello, " + name + "!\n";    	 
     	response += "Version: " + version + "\n";
-    	response += "Hello, " + name + "!\n";
+    	response += ((host!=null)?"Host: "+host+"\n":"");
+    	
     	return response;
     }
 
