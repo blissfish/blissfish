@@ -17,7 +17,7 @@ public class Application {
 	
 	@Value("${version}")
 	private String version;
-
+	
     public static void main(String[] args) {
         SpringApplication.run(Application.class, args);
     }
