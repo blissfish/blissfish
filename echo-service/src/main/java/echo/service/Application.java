@@ -28,12 +28,12 @@ public class Application {
     
     @RequestMapping("/")
     String echo() {		
-    	return echo("");
+    	return echo("echo-service called...");
     }
 
     @RequestMapping("/{message}")
     String echo(@PathVariable String message) {
-		log.info("echo-service called...");
+		log.info(message);
     	String host = getHostName();
     	String response = message + "\n";    	 
     	response += "Version: " + version + "\n";
