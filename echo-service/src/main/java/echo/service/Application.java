@@ -25,6 +25,11 @@ public class Application {
     public static void main(String[] args) {
         SpringApplication.run(Application.class, args);
     }
+    
+    @RequestMapping("/")
+    String echo() {		
+    	return echo("");
+    }
 
     @RequestMapping("/{message}")
     String echo(@PathVariable String message) {
