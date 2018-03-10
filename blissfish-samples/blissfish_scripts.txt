@@ -45,6 +45,9 @@ docker ps -s
 
 docker run --rm -p 8080:8080 gcr.io/${PROJECT_ID}/simple-service:0.0.1
 
+docker image rm gcr.io/${PROJECT_ID}/simple-service:0.0.1
+# you can use the image id (docker images) to delete an image as well
+
 
 ####################################################
 # Create cluster
