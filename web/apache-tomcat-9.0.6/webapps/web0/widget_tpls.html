@@ -1,0 +1,75 @@
+<template id="my-widget-tpl">
+
+
+<div id="widget" class="rcorners1" >
+	<h1>Widget</h1>
+	<p>Lorem ipsum dolor sit amet, consectetur adipisici elit, sed
+		eiusmod tempor incidunt ut labore et dolore magna aliqua. Ut enim ad
+		minim veniam, quis nostrud exercitation ullamco laboris nisi ut
+		aliquid ex ea commodi consequat. Quis aute iure reprehenderit in
+		voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur
+		sint obcaecat cupiditat non proident, sunt in culpa qui officia
+		deserunt mollit anim id est laborum.</p>
+	<button type="button">Go</button>
+</div>
+</template>
+
+<script src="widget.js"></script>
+
+<script>
+class MyWebComponentWidget extends HTMLElement {
+	 constructor() {
+	    super();
+	    let tmpl = document.currentScript.ownerDocument.querySelector('#my-widget-tpl');
+	    let shadowRoot = this.attachShadow({mode: 'open'});
+	    let clone = tmpl.content.cloneNode(true);
+	    shadowRoot.appendChild(clone);	
+	    this.addEventListener('click', e => {
+
+			this.load(shadowRoot);
+	    	
+	    });	  
+	  }	
+	 load(shadowRoot) {		 
+	    	var xhttp = new XMLHttpRequest();
+	    	xhttp.onreadystatechange = function() {
+	    		if (this.readyState == 4 && this.status == 200) {
+	    	 			shadowRoot.innerHTML = this.responseText;	
+	    		}
+	    	};
+	    	xhttp.open("GET", "http://localhost:8080/web0/s4/widget.html", true);
+	    	xhttp.send();
+		 
+	 }
+}
+window.customElements.define('my-web-component-widget', MyWebComponentWidget);
+
+class MyDivReplacementWidget extends HTMLElement {
+	 constructor() {
+	    super();
+	    let tmpl = document.currentScript.ownerDocument.querySelector('#my-widget-tpl');
+	    this.appendChild(tmpl.content.cloneNode(true));
+	  }	
+}
+window.customElements.define('my-div-replacement-widget', MyDivReplacementWidget);
+
+class MyIFrameWidget extends HTMLElement {
+	 constructor() {
+	    super();
+	    let tmpl = document.currentScript.ownerDocument.querySelector('#my-widget-tpl');	    
+	    var ifrm = document.createElement("iframe");
+      ifrm.setAttribute("src", "http://localhost:8080/web0/widget.html");
+      ifrm.style.width = "440px";
+      ifrm.style.height = "230px";
+      ifrm.style.borderWidth = "0";
+      ifrm.style.borderTopWidth = "0";
+      ifrm.style.borderRightWidth = "0";
+      ifrm.style.borderLeftWidth = "0";
+      ifrm.style.borderBottomWidth = "0";
+      ifrm.style.borderStyle = "none";    
+      ifrm.setAttribute("scrolling", "no");
+      this.appendChild(ifrm);
+	  }	
+}
+window.customElements.define('my-iframe-widget', MyIFrameWidget);
+</script>
