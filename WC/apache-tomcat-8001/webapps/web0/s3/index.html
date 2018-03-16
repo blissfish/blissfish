@@ -1,0 +1,26 @@
+
+
+<!DOCTYPE html>
+<html>
+<head>
+  <template>
+
+<div>
+<h1>Widget (local)</h1>
+<p>Rounded corners!</p>
+</div>
+</template>
+
+</head>
+<body>
+
+<script type="text/javascript">
+var content = document.querySelector('template').import;
+var el = content.querySelector("div");
+document.body.appendChild(el.importNode(true));
+</script>
+
+asdasd
+
+</body>
+</html>

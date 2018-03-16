@@ -1,0 +1,35 @@
+<template id="hello1">
+  <h1>Hello World!</h1>
+  <!-- Img is not requested until the <template> goes live. -->
+</template>
+<template id="hello">
+  <h1>Hello World!!</h1>
+  <!-- Img is not requested until the <template> goes live. -->
+</template>
+
+  
+<template id="my-template">
+  <style>
+    h1 { color: red; }
+    p { color: red; }
+  </style>
+  <h1>Content</h1>
+  <p>I'm in Shadow DOM. My markup was stamped from a &lt;template&gt;.</p>
+</template>
+
+<script>
+  var link = document.querySelector('link[rel="import"]');
+  var tmpl  = link.import.querySelector('#my-template');
+  class BasicElement extends HTMLElement {
+	constructor() {
+    	super();
+    	var shadow = this.attachShadow({mode: 'open'});
+    	var text = document.createElement('span');
+    	text.textContent = 'Just a basic web component.';
+   	    shadow.appendChild(tmpl.content.cloneNode(true));    	        
+    }
+}
+customElements.define('basic-element', BasicElement);
+</script>
+
+
