@@ -1,14 +1,17 @@
 package web0;
 
+import java.util.Date;
+
 import javax.ws.rs.GET;
 import javax.ws.rs.Path;
 import javax.ws.rs.PathParam;
 import javax.ws.rs.Produces;
 import javax.ws.rs.core.Response;
+import javax.ws.rs.core.Response.ResponseBuilder;
 
 
 @Path("/service")
-public class SimpleService2 {
+public class SimpleService {
 
 	@GET
 	@Path("/{param}")
@@ -34,15 +37,16 @@ public class SimpleService2 {
 				"\r\n" + 
 				"<div id=\"widget\" class=\"rcorners1\">\r\n" + 
 				"	<h1>Widget</h1>\r\n" + 
-				"	<p> Jersey says : "+ msg+"</p>\r\n" + 
-				"</div>";
-		
-//	    cres.getHeaders().add("Access-Control-Allow-Origin", "*");
-//	      cres.getHeaders().add("Access-Control-Allow-Headers", "origin, content-type, accept, authorization");
-//	      cres.getHeaders().add("Access-Control-Allow-Credentials", "true");
-//	      cres.getHeaders().add("Access-Control-Allow-Methods", "GET, POST, PUT, DELETE, OPTIONS, HEAD");
-//	      cres.getHeaders().add("Access-Control-Max-Age", "1209600");
-		return Response.status(200).entity(output).header("Access-Control-Allow-Origin", "*").build();
+				"	<p> "+ msg+" from Jersey (" +new Date(System.currentTimeMillis())+")"+ 
+				"</p>\r\n</div>";
+
+		ResponseBuilder builder = Response.status(200).entity(output);
+		builder.header("Access-Control-Allow-Origin", "*");
+		builder.header("Access-Control-Allow-Headers", "origin, content-type, accept, authorization");
+		builder.header("Access-Control-Allow-Credentials", "true");
+		builder.header("Access-Control-Allow-Methods", "GET, POST, PUT, DELETE, OPTIONS, HEAD");
+		builder.header("Access-Control-Max-Age", "1209600");
+		return builder.build();
 	}
 	
 
