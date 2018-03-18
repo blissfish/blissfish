@@ -1,0 +1,13 @@
+<html>
+<head>
+  <link rel="import" href="import.html">
+</head>
+<body>
+	
+<script type="text/javascript">
+
+var content = document.querySelector('link[rel="import"]').import;
+document.body.appendChild(content.cloneNode(true));
+</script> 
+</body>
+</html>

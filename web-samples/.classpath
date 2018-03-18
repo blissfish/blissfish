@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<classpath>
+	<classpathentry kind="src" output="apache-tomcat7-9090/webapps/web/WEB-INF/classes" path="apache-tomcat7-9090/webapps/web/src"/>
+	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER/org.eclipse.jdt.internal.debug.ui.launcher.StandardVMType/JavaSE-1.8"/>
+	<classpathentry kind="lib" path="apache-tomcat7-8080/lib/annotations-api.jar"/>
+	<classpathentry kind="lib" path="apache-tomcat7-8080/lib/catalina-ant.jar"/>
+	<classpathentry kind="lib" path="apache-tomcat7-8080/lib/catalina-ha.jar"/>
+	<classpathentry kind="lib" path="apache-tomcat7-8080/lib/catalina-tribes.jar"/>
+	<classpathentry kind="lib" path="apache-tomcat7-8080/lib/catalina.jar"/>
+	<classpathentry kind="lib" path="apache-tomcat7-8080/lib/ecj-4.4.2.jar"/>
+	<classpathentry kind="lib" path="apache-tomcat7-8080/lib/el-api.jar"/>
+	<classpathentry kind="lib" path="apache-tomcat7-8080/lib/jackson-core-asl-1.9.2.jar"/>
+	<classpathentry kind="lib" path="apache-tomcat7-8080/lib/jackson-jaxrs-1.9.2.jar"/>
+	<classpathentry kind="lib" path="apache-tomcat7-8080/lib/jackson-mapper-asl-1.9.2.jar"/>
+	<classpathentry kind="lib" path="apache-tomcat7-8080/lib/jackson-xc-1.9.2.jar"/>
+	<classpathentry kind="lib" path="apache-tomcat7-8080/lib/jasper-el.jar"/>
+	<classpathentry kind="lib" path="apache-tomcat7-8080/lib/jasper.jar"/>
+	<classpathentry kind="lib" path="apache-tomcat7-8080/lib/jersey-client-1.19.1.jar"/>
+	<classpathentry kind="lib" path="apache-tomcat7-8080/lib/jersey-core-1.19.1.jar"/>
+	<classpathentry kind="lib" path="apache-tomcat7-8080/lib/jersey-json-1.19.1.jar"/>
+	<classpathentry kind="lib" path="apache-tomcat7-8080/lib/jersey-server-1.19.1.jar"/>
+	<classpathentry kind="lib" path="apache-tomcat7-8080/lib/jersey-servlet-1.19.1.jar"/>
+	<classpathentry kind="lib" path="apache-tomcat7-8080/lib/jettison-1.1.jar"/>
+	<classpathentry kind="lib" path="apache-tomcat7-8080/lib/jsp-api.jar"/>
+	<classpathentry kind="lib" path="apache-tomcat7-8080/lib/jsr311-api-1.1.1.jar"/>
+	<classpathentry kind="lib" path="apache-tomcat7-8080/lib/servlet-api.jar"/>
+	<classpathentry kind="lib" path="apache-tomcat7-8080/lib/tomcat-api.jar"/>
+	<classpathentry kind="lib" path="apache-tomcat7-8080/lib/tomcat-coyote.jar"/>
+	<classpathentry kind="lib" path="apache-tomcat7-8080/lib/tomcat-dbcp.jar"/>
+	<classpathentry kind="lib" path="apache-tomcat7-8080/lib/tomcat-i18n-es.jar"/>
+	<classpathentry kind="lib" path="apache-tomcat7-8080/lib/tomcat-i18n-fr.jar"/>
+	<classpathentry kind="lib" path="apache-tomcat7-8080/lib/tomcat-i18n-ja.jar"/>
+	<classpathentry kind="lib" path="apache-tomcat7-8080/lib/tomcat-jdbc.jar"/>
+	<classpathentry kind="lib" path="apache-tomcat7-8080/lib/tomcat-util.jar"/>
+	<classpathentry kind="lib" path="apache-tomcat7-8080/lib/tomcat7-websocket.jar"/>
+	<classpathentry kind="lib" path="apache-tomcat7-8080/lib/websocket-api.jar"/>
+	<classpathentry kind="output" path="bin"/>
+</classpath>
