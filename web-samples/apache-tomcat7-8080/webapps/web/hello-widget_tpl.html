@@ -7,7 +7,7 @@
 <div class="card mb-4 box-shadow">
 	<img style="cursor: pointer" class="card-img-top" src="Hello.svg" alt="Card image cap">
 	<div class="card-body">
-		<p class="card-text">Some content provided for you.</p>
+		<p class="card-text">Some local default content provided for you.</p>
 		<div class="d-flex justify-content-between align-items-center">
 			<div class="btn-group">
 				<button type="button" class="btn btn-sm btn-outline-secondary">View</button>
@@ -29,12 +29,9 @@ class HelloWidget extends HTMLElement {
 	    let shadowRoot = this.attachShadow({mode: 'open'});
 	    let clone = tmpl.content.cloneNode(true);
 	    shadowRoot.appendChild(clone);
-	    //this.load(shadowRoot, this.url);
-	    
 	    this.addEventListener('click', e => {
-			this.url = "http://localhost:9090/web/api/service/Hello/";
 		    if(this.toggle ==0) {		    	
-				this.url = "http://localhost:9090/web/api/service/Hello/";
+				this.url = "http://localhost:9090/web/service.jsp";
 		    	this.toggle = 1;
 		    }else{
 				this.url = "http://localhost:9090/web/api/service/Hello/";

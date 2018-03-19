@@ -17,35 +17,26 @@ public class SimpleService {
 	@Path("/{param}")
     @Produces(javax.ws.rs.core.MediaType.TEXT_HTML)
 	public Response getMsg(@PathParam("param") String msg) {
-		String output = "<style>\r\n" + 
-				"body {\r\n" + 
-				"    display: block;\r\n" + 
-				"    margin: 0px;\r\n" + 
-				"}\r\n" + 
-				".rcorners1 {\r\n" + 
-				"	font-family: Arial, Helvetica, sans-serif;\r\n" + 
-				"	font-size: 12px;\r\n" + 
-				"    border-radius: 25px;\r\n" + 
-				" 	background: linear-gradient(to right, blue, indigo);\r\n" + 
-				" 	color: white;\r\n" + 
-				"    padding: 20px;\r\n" + 
-				"    width: 380px;\r\n" + 
-				"    height: 180px;\r\n" + 
-				"    box-shadow: 4px 4px 6px #000000;\r\n" + 
-				"}\r\n" + 
+		String output = "<style>host{all:inital}</style>\r\n" + 
+				"<style type=\"text/css\">\r\n" + 
+				"@import url(\"my-bootstrap.min.css\");\r\n" +
+				".box-shadow {box-shadow: 9px 11px 15px #666666;}\r\n"+				 
 				"</style>\r\n" + 
-				"\r\n" + 
-				"<div id=\"widget\" class=\"rcorners1\">\r\n" + 
-				"	<h1>Widget</h1>\r\n" + 
-				"	<p> "+ msg+" from Jersey (" +new Date(System.currentTimeMillis())+")"+ 
-				"</p>\r\n</div>";
+				"<div class=\"card mb-4 box-shadow\">\r\n" + 
+				"	<img style=\"cursor: pointer\" class=\"card-img-top\" src=\"Hello.svg\" alt=\"Card image cap\">\r\n" + 
+				"	<div class=\"card-body\">\r\n" + 
+				"		<p class=\"card-text\"> "+ msg+" from Jersey (" +new Date(System.currentTimeMillis())+")</p>\r\n" + 
+				"		<div class=\"d-flex justify-content-between align-items-center\">\r\n" + 
+				"			<div class=\"btn-group\">\r\n" + 
+				"				<button type=\"button\" class=\"btn btn-sm btn-outline-secondary\">View</button>\r\n" + 
+				"				<button type=\"button\" class=\"btn btn-sm btn-outline-secondary\">Edit</button>\r\n" + 
+				"			</div>\r\n" + 
+				"			<small class=\"text-muted\">9 mins</small>\r\n" + 
+				"		</div>\r\n" + 
+				"	</div>\r\n" + 
+				"</div>";
 
 		ResponseBuilder builder = Response.status(200).entity(output);
-		builder.header("Access-Control-Allow-Origin", "*");
-		builder.header("Access-Control-Allow-Headers", "origin, content-type, accept, authorization");
-		builder.header("Access-Control-Allow-Credentials", "true");
-		builder.header("Access-Control-Allow-Methods", "GET, POST, PUT, DELETE, OPTIONS, HEAD");
-		builder.header("Access-Control-Max-Age", "1209600");
 		return builder.build();
 	}
 	
